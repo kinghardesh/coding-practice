@@ -1,2 +1,4 @@
 ## week2
-week2/jsfile we learnt about basics in js and did some basic on array , class or object 
+| File Name   | File Description                 | What I Learnt |
+|-------------|----------------------------------|---------------|
+|week2/js%20files/jain.js   |JavaScript practice file covering arrays, objects, functions, map, filter |core JS logic, data handling, functional methods  |
