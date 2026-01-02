@@ -1,0 +1,17 @@
+<style>
+    body{
+        background-color: lightblue;
+    }
+    .heading{
+            font-size: 25px;
+            font-family: times new roman;
+            padding:10px;
+            margin:10px; 
+    }
+    .text{
+            font-size:25px;
+            font-family: Arial, sans-serif;
+            padding:10px;
+            margin:10px; 
+    }
+</style>

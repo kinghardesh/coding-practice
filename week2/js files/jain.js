@@ -1,3 +1,4 @@
+
 arr1=[1,2,3,4,5,6,7,8,9,10];
 rev=[];
 for (let i=0;i<arr1.length;i++){
@@ -15,7 +16,7 @@ console.log("maximum number is: ");
 console.log(max);
 min=arr1[0];
 for (let i=0;i<arr1.length;i++){
-    arr1[i]<min){
+    if (arr1[i]<min){
         min=arr1[i];
     }   
 }
