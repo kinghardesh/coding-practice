@@ -1,0 +1,65 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+body{
+    background-color: #548687;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Center any table horizontally on the page */
+table{
+    margin: 0 auto;
+}
+/* MAIN WRAPPER */
+.container {
+  display: flex;
+  flex-direction: column;   /* stack title, buttons, board */
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
+
+/* GAME BOARD */
+.game {
+  width: 45vmin;
+  height: 45vmin;
+  display: grid;                    /* IMPORTANT */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5vmin;
+}   
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border:none
+    box-shadow: 0 0 1rem #333;
+    border-radius: 1rem;    
+
+}
+#RESET-BTN{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: ffff;
+}
+
+#newgame-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: ffff;
+    border-radius: 1rem;
+    cursor: pointer;
+}   
+#msg{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    font-color: red;
+    text-align: center;
+}
+.hide{
+    display: none;
+}
