@@ -26,7 +26,7 @@ class Node{
         }
         head=N;
     }
-    void insertattail(Node*head,int val){
+    void insertattail(Node*&head,int val){
         Node*N=new Node(val)
         if(head==Null){
             head=N;
@@ -39,7 +39,7 @@ class Node{
         temp->next=N;
         N->prev=temp;
     }
-    void deleteattail(Node*temp,int val){
+    void deleteattail(Node*&temp,int val){
         if (head->next==Null){
             delete head;
             head= NULL;
@@ -50,6 +50,19 @@ class Node{
         }
         temp->prev->next=Null;
         delete temp;
+    }
+    void reverseDLL(Node*&head){
+        Node*curr=head;
+        Node*temp=Null;
+        while(curr!=Null){
+            temp=curr->prev;
+            curr->prev=curr->next;
+            curr->next=temp;
+            curr=curr->prev;
+        }
+        if (temp!=Null){
+            head=temp->prev;
+        }
     }
 
 
@@ -66,6 +79,7 @@ int main(){
     display(head);
     insertathead(head,4);
     display(head);
+    
 
     return 0;
 }
