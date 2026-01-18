@@ -5,8 +5,11 @@
 
 {% block body %}
 <div class="conent">
-    <h1>Task master</h1>
-    <table>
+    <h1 style="text-align: center">Task master</h1>
+    {% if task|length >1 %}
+    <h4 align="center">There is no task here</h4>
+     {%else%}
+    <table align="center">
         <tr>
             <th>Table</th>
             <th>ADD</th>
@@ -14,19 +17,23 @@
         </tr>
         {% for task in tasks %}
             <tr>
-                <td>{{ task.conent }} </td>
+                <td>{{ task.content }} </td>
                 <td>{{ task.date_created.date() }}</td>
                 <td>
-                    <a href="">Delete </a>
+                    <a href="/delete/{{task.id}}">Delete </a>
                     <br>
-                    <a href="">update</a>
+                    <a href="/update/{{task.id}}">update</a>
                 </td>
             </tr>
         {% endfor %}    
     </table>
+    {% endif %}
+    <br>
+    <div class="form">
     <form action="/" method="POST">
         <input type ="text" name="content" id="content">
         <input type ="submit" value="ADD TASK">
     </form>
+    </div>
 </div>
 {% endblock %}

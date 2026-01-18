@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1 align="center" >WELCOME TO EXPENSE TRACKER</h1>
+<div class="conent">
+    <table align="center">
+            <tr>
+                <th>discription</th>
+                <th>time_created</th>
+                <th>expense amount</th>
+                <th>Actions</th>
+            </tr>
+            {% for tasks in task %}    
+                <tr>
+                    <th>{{ task.content }}</th>
+                    <th>{{ task.date_created.date() }}</th>
+                    <th>{{ task.expense }}</th>
+                    <th>
+                        <a href="/delete/task.id">Delete</a>
+                        <a href="/update/task.id">Update</a>
+                    </th>
+                </tr>
+            {% endfor %}
+    </table>
+    <div class="form">
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="number" name="expense" id="nos">
+        <input type="submit" value="ADD TASK">
+    </form>
+    </div>
+</div>
+{% endblock %}

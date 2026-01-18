@@ -1,0 +1,16 @@
+.body{
+    background-color: #FFA240;
+    margin: 0%;
+}
+th,td{
+    border: 2px black;
+    padding: 10px 20px;
+
+}
+.table{
+    align-items: center;
+}
+.form{
+    align-items: center;
+
+}
