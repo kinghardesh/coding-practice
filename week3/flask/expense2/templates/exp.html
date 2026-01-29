@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block head %}
+
+{% blockend %}
+{% block body %}
+<h1 align="center"> EXPENSE TRACKER  </h1>
+<div class="tabke">
+<table align="center">
+    <tr>
+        <th>expense description</th>
+        <th>date_created</th>
+        <th>amount</th>
+        <th>Action</th>
+    </tr>
+    {% for tasks in task %}
+    <tr>
+        <td>{{}}</td>
+        <td>{{}}</td>
+        <td>{{}}</td>
+        <td>
+            <a href="">update</a>
+            <a href="">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
+<div class="form">
+    <form>
+        <input type="text" class="task" name="task">
+        <input type="number" class="amount" name="amount">
+        <input type='submit' value="ADD TASK">
+    </form>
+</div>

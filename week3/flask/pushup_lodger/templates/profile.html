@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='extended_beauty.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>User Profile</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/muscle.ico') }}" alt="Profile Picture" style="width: 100px;">
+        </div>
+        <div class="col-md-8 text-left">
+            <h4>Username: <strong>User123</strong></h4>
+            <p>Email: user@example.com</p>
+            <p>Total Workouts: 12</p>
+            <button class="btn btn-outline-danger btn-sm">Edit Profile</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

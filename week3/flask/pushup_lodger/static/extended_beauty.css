@@ -1,0 +1,29 @@
+/* extended_beauty.css */
+
+/* Center the text and add padding for the welcome section */
+.container {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Specific styling for the pushup image */
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Styling for the login/signup buttons */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

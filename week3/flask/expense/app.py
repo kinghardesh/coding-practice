@@ -16,7 +16,7 @@ class Expense(db.Model):
 def index():
     if request.method== 'POST':
         Expense_discription=request.form['content']
-        expense_amount=request.form['expense']
+        expense_amount=int(request.form['expense'])
         new_task=Expense(
             content=Expense_discription,
             expense=expense_amount

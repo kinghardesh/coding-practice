@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='extended_beauty.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Sign Up</h1>
+    <p>Create an account to start tracking your progress!</p>
+    
+    <div class="auth-wrapper" style="max-width: 400px; margin: auto;">
+        <form>
+               <div class="form-group">
+                <input type="text" class="form-control" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
