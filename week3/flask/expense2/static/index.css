@@ -1,0 +1,10 @@
+.table{
+    align-items:center;
+    border: 2px;
+}
+
+.form{
+    align-content: center;
+    justify-content: center;
+    color: aqua;
+}

@@ -31,8 +31,8 @@ def index():
  
 @app.route('/table')
 def table():
-    tasks=expense1.query.order_by(expense1.date_created).all()
-    return render_template('table.html',tasks=tasks)
+    tasks = expense1.query.order_by(expense1.date_created).all()
+    return render_template('table.html', tasks=tasks)
 
 @app.route('/delete/<int:id>')
 def delete():
