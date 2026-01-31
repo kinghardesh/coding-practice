@@ -1,10 +1,7 @@
-{% extends 'index.html' %}
-{% block head %}
+{% extends 'base.html' %}
+{% body block %}
 
-{% blockend %}
-{% block body %}
-<h1 align="center"> EXPENSE TRACKER  </h1>
-<div class="tabke">
+<div class="table">
 <table align="center">
     <tr>
         <th>expense description</th>
@@ -24,12 +21,9 @@
     </tr>
     {% endfor %}
 </table>
+<button methods="POST">go to task page </button>
 </div>
 {% endblock %}
-<div class="form">
-    <form action='/' method="POST" >
-        <input type="text" class="task" name="task">
-        <input type="number" class="amount" name="amount">
-        <input type='submit' value="ADD TASK">
-    </form>
-</div>
+
+
+
