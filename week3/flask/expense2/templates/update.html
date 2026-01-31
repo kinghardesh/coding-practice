@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div class="form">
+    <form action='/' method="POST" >
+        <input type="text" class="task" name="task" placeholder="enter the expense discription">
+        <input type="number" class="amount" name="amount" placeholder="enter the expense amount">
+        <input type='submit' value="ADD TASK">
+    </form>
+</div>
+{% endblock %}

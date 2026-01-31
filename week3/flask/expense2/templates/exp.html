@@ -1,35 +1,18 @@
 {% extends 'index.html' %}
 {% block head %}
 
-{% blockend %}
+{% endblock %}
 {% block body %}
 <h1 align="center"> EXPENSE TRACKER  </h1>
-<div class="tabke">
-<table align="center">
-    <tr>
-        <th>expense description</th>
-        <th>date_created</th>
-        <th>amount</th>
-        <th>Action</th>
-    </tr>
-    {% for tasks in task %}
-    <tr>
-        <td>{{ task.desc}}</td>
-        <td>{{ task.date_created }}</td>
-        <td>{{ task.amount }}</td>
-        <td>
-            <a href="">update</a>
-            <a href="">Delete</a>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
-</div>
-{% endblock %}
+<h2 align="center"> FILL THE FORM  </h2>
 <div class="form">
     <form action='/' method="POST" >
-        <input type="text" class="task" name="task">
-        <input type="number" class="amount" name="amount">
+        <input type="text" class="content" name="tasks" placeholder="enter the expense discription">
+        <input type="number" class="amount" name="amount" placeholder="enter the expense amount">
         <input type='submit' value="ADD TASK">
-    </form>
+    </form> 
 </div>
+<form action="{{ url_for('table') }}" method="get">
+    <button type="submit">go to expense page</button>
+</form>
+{% endblock %}
