@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block head %}
+    <title>CONTACT FORM</title>
+{% endblock %}
+{% block body %}
+    <h1 align="center">CONTACT FORM</h1>
+    <div class="form">
+        <form  align="center" method="POST"  action="/">
+            <label for="name">NAME:</label><br>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+            <br>
+            <label for="email">EMAIL:</label><br>
+            <input type="email" id ="email" name="email" required placeholder="Enter your email">
+            <br>
+            <label for="phone number">PHONE NUMBER:</label><br>
+            <input type="text" id="phone" name="phone" required placeholder="Enter your phone number">
+            <br>
+            <input type="submit" value="ADD TASK">
+            <br><br>
+        </form>
+    </div>
+    <form align="center" action="{{ url_for('contact') }}">
+        <button type="submit"> GO TO CONTACTS </button>
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block head %}
+    <title> CONTACT PAGE </title>
+{% endblock %}
+{% block body %}
+    <h1 align="center"> CONTACTS PAGE </h1>
+    <table border="2" align="center">
+        <tr>
+            <th> NAME </th>
+            <th> EMAIL </th>
+            <th> PHONE NUMBER </th>
+            <th> ACTION </th>
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td> {{ contact.name }} </td>
+            <td> {{ contact.email }} </td>
+            <td> {{ contact.phone }} </td>
+            <td> 
+                <a href="/delete/{{ contact.id }}"> DELETE </a>
+                <a href="/update/{{ contact.id }}"> UPDATE </a> 
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form  align="center" action="{{ url_for('index') }}">
+        <button type="submit"> GO TO FORM </button>
+    </form>
+{% endblock %}

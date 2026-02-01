@@ -2,26 +2,27 @@
 {% block body %}
 <h1 align="center"> welcome to expense tracker table it shows all ur expense </h1>
 <div class="table">
-<table border="1" align="center">
-    <tr>
-        <th>Expense</th>
-        <th>Date</th>
-        <th>Amount</th>
-        <th>Actions</th>
-    </tr>
+    <table border="1" align="center">
+        <tr>
+            <th>Expense</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
 
-    {% for task in tasks %}
-    <tr>
-        <td>{{ task.content }}</td>
-        <td>{{ task.date_created }}</td>
-        <td>{{ task.amount }}</td>
-        <td> 
-            <a href="/update/{{ task.id }}">update</a> 
-            <a href="/delete/{{ task.id }}">Delete</a> 
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.content }}</td>
+            <td>{{ task.date_created }}</td>
+            <td>{{ task.amount }}</td>
+            <td> 
+                <a href="/update/{{ task.id }}">update</a> 
+                <a href="/delete/{{ task.id }}">Delete</a> 
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 
 <form action="{{ url_for('index') }}">
     <button type="submit">Go back</button>
