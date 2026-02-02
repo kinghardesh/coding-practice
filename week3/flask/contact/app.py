@@ -1,5 +1,6 @@
 from flask import Flask,render_template,redirect,url_for,request
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import or_
 app=Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///contacts.db'
 db=SQLAlchemy(app)
@@ -31,7 +32,17 @@ def index():
         return render_template("form.html")
 @app.route('/contact')
 def contact():
-    contacts=Contacts.query.order_by(Contacts.name).all()
+    q=request.args.get('q')
+    if q:
+        contacts=Contacts.query.filter(
+            or_(
+                Contacts.name.contains(q),
+                Contacts.email.contains(q),
+                Contacts.phone.contains(q)
+            )
+        ).all()
+    else:
+        contacts=Contacts.query.order_by(Contacts.name).all()
     return render_template("contact.html",contacts=contacts)
 @app.route('/delete/<int:id>')
 def delete(id):
@@ -52,7 +63,7 @@ def update(id):
         contact.phone=request.form['phone']
         try:
             db.session.commit()
-            return redirect('/')
+            return redirect('/contact')
         except:
             return "There was an issue updating your contact"
     else:

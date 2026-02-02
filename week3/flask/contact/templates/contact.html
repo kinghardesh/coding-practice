@@ -4,6 +4,11 @@
 {% endblock %}
 {% block body %}
     <h1 align="center"> CONTACTS PAGE </h1>
+    <form method="GET" action="/contact" align="right" class=".f">
+        <input type="text" name="q" placeholder="Search contact">
+        <button type="submit">Search</button>
+    </form>
+
     <table border="2" align="center">
         <tr>
             <th> NAME </th>
@@ -26,4 +31,5 @@
     <form  align="center" action="{{ url_for('index') }}">
         <button type="submit"> GO TO FORM </button>
     </form>
+
 {% endblock %}

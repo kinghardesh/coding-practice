@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block head %}
+    <title>CONTACT FORM</title>
+{% endblock %}
+{% block body %}
+    <h1 align="center">CONTACT FORM</h1>
+    <div class="form">
+        <form  align="center" method="POST"  action="/update/{{ contact.id }}">
+            <label for="name">NAME:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <br>
+            <label for="email">EMAIL:</label><br>
+            <input type="email" id ="email" name="email"  placeholder="Enter your email">
+            <br>
+            <label for="phone number">PHONE NUMBER:</label><br>
+            <input type="text" id="phone" name="phone"  placeholder="Enter your phone number">
+            <br>
+            <input type="submit" value="ADD TASK">
+            <br><br>
+        </form>
+    </div>
+{% endblock %}
