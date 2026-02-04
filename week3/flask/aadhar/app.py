@@ -8,6 +8,7 @@ class Aadhar(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(100),nullable=False)
     email=db.Column(db.String(100),nullable=False)
+    phone_no=db.Column(db.Integer,default=0)
     specialized_no=db.Column(db.Integer,default=0)
     def __repr__(self):
         return f"<Aadhar {self.id}>"
@@ -16,10 +17,12 @@ def index():
     if request.method=='POST':
         name=request.form['name']
         email=request.form['email']
+        phone_no=request.form['phone_no']
         specialized_no=request.form['specialized_no']
         new_aadhar=Aadhar(
             name=name,
             email=email,
+            phone_no=phone_no,
             specialized_no=specialized_no
         )
         try:
