@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>Expense Tracker</title>
+{% endblock %}
+
+{% block body %}
+    <h1 align="center">EXPENSE TRACKER</h1>
+    <table border="1" align="center">
+        <tr>
+            <th>DESCRIPTION</th>
+            <th>AMOUNT</th>
+            <th>CATEGORY</th>
+            <th>ACTIONS</th>
+        </tr>
+        {% for expense in expenses %}
+        <tr>
+            <td>{{ expense.content }}</td>
+            <td>{{ expense.amount }}</td>
+            <td>{{ expense.category }}</td>
+            <td>
+                <a href="/update/{{ expense.id }}">Update</a>
+                <a href="/delete/{{ expense.id }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form align="center" action="{{ url_for('form') }}">
+        <button type="submit"> ADD EXPENSE </button>
+    </form>
+{% endblock %}

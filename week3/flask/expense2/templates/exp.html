@@ -6,13 +6,21 @@
 <h1 align="center"> EXPENSE TRACKER  </h1>
 <h2 align="center"> FILL THE FORM  </h2>
 <div class="form">
-    <form action='/' method="POST" >
-        <input type="text" class="content" name="tasks" placeholder="enter the expense discription">
-        <input type="number" class="amount" name="amount" placeholder="enter the expense amount">
-        <input type='submit' value="ADD TASK">
+    <form action='/' method="POST" align="center">
+        <label>table_discription</label><br><br>
+        <input type="text" class="content" name="tasks" required placeholder="enter the expense discription"><br><br>
+        <label>table_amount</label><br><br>
+        <input type="number" class="amount" name="amount" min="0"  required placeholder="enter the expense amount"><br><br>
+        <label>category:</label><br>
+        <input type="radio" name="category" value="Shopping">Shopping
+        <input type="radio" name="category" value="Food">Food
+        <input type="radio" name="category" value="Gym">Gym
+        <input type="radio" name="category" value="other">other
+        <br><br>
+        <input type='submit' value="ADD TASK"><br><br>
     </form> 
 </div>
-<form action="{{ url_for('table') }}" method="get">
+<form action="{{ url_for('table') }}" method="get" align="center">
     <button type="submit">go to expense page</button>
 </form>
 {% endblock %}

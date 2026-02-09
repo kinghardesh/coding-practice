@@ -9,6 +9,7 @@ class expense1(db.Model):
     content=db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     amount=db.Column(db.Integer,default=True)
+    category=db.Column(db.String(20), nullable=False)
     def __repr__(self):
         return f"<Task{self.id}>"
 @app.route('/',methods=['GET','POST'])
@@ -16,9 +17,12 @@ def index():
     if request.method=="POST":
         expense_description=request.form['tasks']
         expense_amount=request.form['amount']
+        catoegery=request.form['catorgory']
+        
         new_task=expense1(
             content=expense_description,
-            amount=expense_amount
+            amount=expense_amount,
+            category=catoegery
         )
         try:
             db.session.add(new_task)

@@ -7,6 +7,7 @@
             <th>Expense</th>
             <th>Date</th>
             <th>Amount</th>
+            <th>catorgery</th>
             <th>Actions</th>
         </tr>
 
@@ -15,6 +16,7 @@
             <td>{{ task.content }}</td>
             <td>{{ task.date_created }}</td>
             <td>{{ task.amount }}</td>
+            <td>{{ task.category }}</td>
             <td> 
                 <a href="/update/{{ task.id }}">update</a> 
                 <a href="/delete/{{ task.id }}">Delete</a> 

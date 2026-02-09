@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block head %}
+
+{% blockend %}
+{% block body %}
+    <h1 align="center">EXPENSE TRACKER</h1>
+    <h2 align="center">FILL THE FORM </h2>
+    <form action="/" method="POST">
+        <label>expense_descrption</label><br><br>
+        <input type="text" name="content" value="description" required placeholder="Enter description"><br><br>
+        <label>amount</label><br><br>
+        <input type="text" name="amount" value="amount" required placeholder="enter amount"><br><br>
+        <label>category</label><br><br>
+        <input type="radio" name="category" value="food">food
+        <input type="radio" name="category" value="Shopping">Shopping
+        <input type="radio" name="category" value="Gym">Gym
+        <input type="radio" name="category" value="Other">Other
+    </form>
