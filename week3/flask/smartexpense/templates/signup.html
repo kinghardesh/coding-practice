@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% body head %}
+    <title> SIGN UP PAGE </title>
+{% endbody %}
+{% body body %}
+    <h1 align="center">SIGN UP PAGE</h1>
+    <form align="center" method="get">
+        <label for="name">name</label>
+        <input type="text" name="name" placeholder="enter your name" required><br><br>
+        <label for="username">username</label><br><br>
+        <input type="text" name="username" placeholder="enter your username" required><br><br>
+        <label for="password">password</label><br><br>
+        <input type="password" name="password" placeholder="enter your password" required><br><br>
+        <input type="submit" value="SIGN UP">
+        <form action="{{ url_for('/login') }}" method="get" align="center">
+            <button type="submit">go to login page</button>
+    </form>
+{% endbody %}

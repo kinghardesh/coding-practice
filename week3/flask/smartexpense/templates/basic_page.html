@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>SPENDING WALLET</title>
+{% endblock %}
+{% block body %}
+    <h1 align="center">SPENDING WALLET</h1>
+    <form align="left" action="{{ url_for('login') }}" method="get">
+        <button type="submit"> LOGIN </button>
+    </form>
+    <form align="left" action="{{ url_for('signup') }}" method="get">
+        <button type="submit"> SIGNUP </button>
+    </form>
+    <form align="left" action="{{ url_for('logout') }}" method="get">
+        <button type="submit"> logout </button>
+    <img src="{{ url_for('static', filename='images/spending_wallet.png') }}" alt="wallet" height="200px">
+    
+    <pre align="center"> 
+    we are making a spending wallet application using flask and sqlite database. 
+    we will be able to add our expenses and also update and delete them. 
+    we will also have a login and signup page for the users. 
+    we will also have a logout page for the users. 
+    we will also have a table page where we can see all our expenses. 
+    we will also have a form page where we can add our expenses. 
+    we will also have a base page where we can see all the pages. 
+    we will also have a model page where we will define our database models. 
+    we will also have an app page where we will define our routes and views. 
+    we will also have a templates folder where we will store our html files. 
+    we will also have a static folder where we will store our css files. 
+    we will also have a main.py file where we will run our application.     
+    </pre>
+{% endblock %}
