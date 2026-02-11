@@ -6,12 +6,15 @@
     <h1 align="center">LOGIN PAGE</h1>
     <div class="form" align="center">
         <form action='/login' method="POST" >
-            <input type="text" class="username" name="username" placeholder="enter your username">
-            <input type="password" class="password" name="password" placeholder="enter your password">
-            <input type='submit' value="LOGIN">
+            {{ form.hidden_tag() }}
+            <label for="name">name</label>
+            {{ form.name(size=32) }}<br><br>
+            <label for="password">password</label><br><br>
+            {{ form.password(size=32) }}<br><br>
+            {{ form.submit }}
         </form>
     </div>
-    <form action="{{ url_for('/signup') }}" method="get" align="center">
-        <button type="submit">go to signup page</button>
+    <form action="{{ url_for('signup') }}" method="GET" align="center">
+        <button type="submit">dont have a Account? signup page</button>
     </form>
 {% endblock %}

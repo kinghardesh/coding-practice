@@ -5,19 +5,16 @@
 {% block body %}
     <h1 align="center">EXPENSE TRACKER</h1>
     <h2 align="center">FILL THE FORM </h2>
-    <form align="center" action="/" method="POST">
+    <form align="center" action="/form" method="POST">
         <label>Expense Description</label><br><br>
         <input type="text" name="content" required placeholder="Enter description"><br><br>
-
         <label>Amount</label><br><br>
         <input type="number" name="amount" required placeholder="Enter amount"><br><br>
-
         <label>Category</label><br><br>
         <input type="radio" name="category" value="Food" required> Food
         <input type="radio" name="category" value="Shopping"> Shopping
         <input type="radio" name="category" value="Gym"> Gym
         <input type="radio" name="category" value="Other"> Other<br><br>
-
         <input type="submit" value="Add Expense">
     </form>
 
