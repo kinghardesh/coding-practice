@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
-{% body head %}
+{% block head %}
     <title> SIGN UP PAGE </title>
-{% endbody %}
-{% body body %}
+{% endblock %}
+{% block body %}
     <h1 align="center">SIGN UP PAGE</h1>
-    <form align="center" method="get">
+    <form align="center" method="post">
         {{ form.hidden_tag() }}
-            <label for="name">name</label>
-            {{ form.name(size=32) }}<br><br>
-            <label for="password">password</label><br><br>
-            {{ form.password(size=32) }}<br><br>
-            {{ form.submit }}
+        <label for="name">name</label>
+        {{ form.name(size=32) }}<br><br>
+        <label for="password">password</label><br><br>
+        {{ form.password(size=32) }}<br><br>
+        {{ form.submit }}
         <form action="{{ url_for('login') }}" method="GET" align="center">
             <button type="submit">go to login page</button>
     </form>
-{% endbody %}
+{% endblock %}

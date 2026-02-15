@@ -5,7 +5,11 @@
 
 {% block body %}
     <h1 align="center">EXPENSE TRACKER</h1>
+    <form align="right" action="{{ url_for('logout') }}" method="get">
+        <button type="submit"> LOGOUT </button>
+    </form>
     <table border="1" align="center">
+    
         <tr>
             <th>DESCRIPTION</th>
             <th>AMOUNT</th>
