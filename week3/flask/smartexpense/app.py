@@ -1,11 +1,11 @@
-from flask import Flask,render_template,redirect
+from flask import Flask,render_template,redirect,request,url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_login import UserMixin,login_user,logout_user,login_required,LoginManager
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField
 from wtforms.validators import InputRequired,Length,ValidationError
-from werkzeug.security import check_password_hash
+from werkzeug.security import generate_password_hash,check_password_hash
 from flask_bcrypt import Bcrypt
 
 app=Flask(__name__)
@@ -39,7 +39,7 @@ class spending(db.Model):
     def __repr__(self):
         return f"<spending {self.id}>"
 
-class user(db.Model,UserMixin):
+class User(db.Model,UserMixin):
     id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(30), nullable=False)
     password_hash=db.Column(db.String(30), nullable=False)
@@ -99,24 +99,29 @@ def delete(id):
 
 
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    form=registerForm()
+    form = registerForm()
+
     if form.validate_on_submit():
-        hashed_password=generate_password_hash(form.password.data)
-        new_user=user(name=form.name.data,password_hash=hashed_password)
+        hashed_password = generate_password_hash(form.password.data)
+        new_user = User(
+            name=form.name.data,
+            password_hash=hashed_password
+        )
         db.session.add(new_user)
         db.session.commit()
         return redirect('/login')
+
     return render_template('signup.html', form=form)
 
-@app.route('/login')
+@app.route('/login',methods=['GET', 'POST'])
 def login():
     form=loginForm()
     if form.validate_on_submit():
-        user=user.query.filter_by(name=form.name.data).first()
-        if user and check_password_hash(user.password_hash,form.password.data):
-            login_user(user)
+        existing_user=User.query.filter_by(name=form.name.data).first()
+        if existing_user and check_password_hash(existing_user.password_hash,form.password.data):
+            login_user(existing_user)
             return redirect('/form')
         else:
             flash('Invalid username or password')

@@ -17,5 +17,7 @@
         <input type="radio" name="category" value="Other"> Other<br><br>
         <input type="submit" value="Add Expense">
     </form>
+    <form align="center" action="{{ url_for('table') }}" method="get">
+        <button type="submit"> VIEW EXPENSES </button>
 
 {% endblock %}
